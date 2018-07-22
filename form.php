@@ -1,4 +1,4 @@
-<h4>Form</h4>
+<h4>Formul&aacute;rio</h4>
 <?php
     include_once('solutions/Form.php');
 
@@ -8,9 +8,9 @@
         $formSave = $objForm->save($_POST);
 
         if ($formSave['success']) {
-            echo '<div class="alert alert-success" role="alert"><strong>Well done!</strong> The data was saved.</div>';
+            echo '<div class="alert alert-success" role="alert"><strong>Feito!</strong> Os dados foram armazenados corretamente.</div>';
         } else {
-            echo '<div class="alert alert-danger" role="alert"><strong>Ops!</strong> An error occurred, try it again.</div>';
+            echo '<div class="alert alert-danger" role="alert"><strong>Ops!</strong> Ocorreu um erro, tente novamente.</div>';
         }
     }
 ?>
@@ -53,7 +53,7 @@
             <div class="form-group row">
                 <label for="inputEmail" class="col-sm-3 col-form-label text-right">E&ndash;mail *</label>
                 <div class="col-sm-9">
-                    <input type="email" name="email" id="inputEmail" class="form-control <?= (!$formSave['success'] && in_array($formSave['invalid_field'], ['email', 'all']) ? 'is-invalid' : ''); ?>" placeholder="name@example.com" required="required" value="<?= (!$formSave['success'] ? $_POST['email'] : '') ?>">
+                    <input type="email" name="email" id="inputEmail" class="form-control <?= (!$formSave['success'] && in_array($formSave['invalid_field'], ['email', 'all']) ? 'is-invalid' : ''); ?>" placeholder="nome@exemplo.com" required="required" value="<?= (!$formSave['success'] ? $_POST['email'] : '') ?>">
                     <?php
                         if ($formSave['success'] === false && in_array($formSave['invalid_field'], ['email', 'all'])) {
                             echo '<div class="invalid-feedback">';
@@ -68,9 +68,9 @@
             <div class="form-group row">
                 <label for="inputTelefone" class="col-sm-4 col-form-label text-right">Telefone *</label>
                 <div class="col-sm-8">
-                    <input type="text" name="telefone" id="inputTelefone" class="form-control <?= (!$formSave['success'] && $formSave['invalid_field'] === 'all' ? 'is-invalid' : ''); ?>" required="required" value="<?= (!$formSave['success'] ? $_POST['telefone'] : '') ?>">
+                    <input type="tel" name="telefone" id="inputTelefone" class="form-control <?= (!$formSave['success'] && in_array($formSave['invalid_field'], ['telefone', 'all']) ? 'is-invalid' : ''); ?>" pattern="\(\d{2}\)?9?\d{4}-\d{4}" placeholder="(00)00000-0000" required="required" value="<?= (!$formSave['success'] ? $_POST['telefone'] : '') ?>">
                     <?php
-                        if ($formSave['success'] === false && $formSave['invalid_field'] === 'all') {
+                        if ($formSave['success'] === false && in_array($formSave['invalid_field'], ['telefone', 'all'])) {
                             echo '<div class="invalid-feedback">';
                                 echo $formSave['invalid_message'];
                             echo '</div>';
@@ -112,6 +112,6 @@
             </div>
         </div>
     </div>
-    <button type="submit" class="btn btn-primary mb-2">Submit</button>
+    <button type="submit" class="btn btn-primary mb-2">Salvar</button>
 </form>
 

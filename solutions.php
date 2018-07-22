@@ -1,12 +1,13 @@
-<html lang="en">
+<html>
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
+    <meta http-equiv="Content-Language" content="pt-br">
+    <meta name="description" content="Soluções dos exercícios para fazer parte do Team CI&T">
     <meta name="author" content="Bruna Pimenta">
-    <link rel="icon" href="./favicon.ico">
+    <link rel="icon" href="assets/icon.png">
 
-    <title>Bruna Pimenta | Solutions</title>
+    <title>Team CI&T | Solu&ccedil;&otilde;es</title>
 
     <!-- Bootstrap core CSS -->
     <link href="assets/css/bootstrap.min.css" rel="stylesheet">
@@ -26,13 +27,13 @@
         <div class="collapse navbar-collapse" id="navbarCollapse">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item">
-              <a class="nav-link" href="index.php">Home</a>
+              <a class="nav-link" href="index.php">In&iacute;cio</a>
             </li>
             <li class="nav-item active">
-              <a class="nav-link" href="solutions.php">Solutions</a>
+              <a class="nav-link" href="solutions.php">Solu&ccedil;&otilde;es</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link " href="#">Contact</a>
+              <a class="nav-link " href="#">Contato</a>
             </li>
           </ul>
         </div>
@@ -41,19 +42,19 @@
 
     <!-- Begin page content -->
     <main role="main" class="container">
-      <h1 class="mt-5">Solutions</h1>
-      <p class="lead">Pick up one solution to see it working.</p>
+      <h1 class="mt-5">Solu&ccedil;&otilde;es</h1>
+      <p class="lead">Escolha uma solu&ccedil;&atilde;o abaixo e a veja funcionando.</p>
 
       <div class="row">
         <div class="col-2">
           <div class="list-group" id="list-tab" role="tablist">
-            <a class="list-group-item list-group-item-action" id="list-countries-list" data-toggle="list" href="#list-countries" role="tab" aria-controls="countries">Countries</a>
-            <a class="list-group-item list-group-item-action" id="list-bites-list" data-toggle="list" href="#list-bites" role="tab" aria-controls="bites">John's Bites</a>
-            <a class="list-group-item list-group-item-action" id="list-extensions-list" data-toggle="list" href="#list-extensions" role="tab" aria-controls="extensions">Files' Extension</a>
-            <a class="list-group-item list-group-item-action" id="list-form-list" data-toggle="list" href="#list-form" role="tab" aria-controls="form">Form</a>
-            <a class="list-group-item list-group-item-action" id="list-parsers-list" data-toggle="list" href="#list-parsers" role="tab" aria-controls="parsers">Parser</a>
+            <a class="list-group-item list-group-item-action" id="list-countries-list" data-toggle="list" href="#list-countries" role="tab" aria-controls="countries">Pa&iacute;ses</a>
+            <a class="list-group-item list-group-item-action" id="list-bites-list" data-toggle="list" href="#list-bites" role="tab" aria-controls="bites">Jo&atilde;ozinho</a>
+            <a class="list-group-item list-group-item-action" id="list-extensions-list" data-toggle="list" href="#list-extensions" role="tab" aria-controls="extensions">Extens&otilde;es</a>
+            <a class="list-group-item list-group-item-action" id="list-form-list" data-toggle="list" href="#list-form" role="tab" aria-controls="form">Formul&aacute;rio</a>
+            <a class="list-group-item list-group-item-action" id="list-parsers-list" data-toggle="list" href="#list-parsers" role="tab" aria-controls="parsers">Conversor</a>
             <a class="list-group-item list-group-item-action" id="list-selects-list" data-toggle="list" href="#list-selects" role="tab" aria-controls="selects">Select Field</a>
-            <a class="list-group-item list-group-item-action" id="list-users-list" data-toggle="list" href="#list-users" role="tab" aria-controls="users">Users' API</a>
+            <a class="list-group-item list-group-item-action" id="list-users-list" data-toggle="list" href="#list-users" role="tab" aria-controls="users">API</a>
           </div>
         </div>
         <div class="col-10">
@@ -93,7 +94,7 @@
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="assets/js/jquery-3.3.1.min.js"></script>
     <!-- <script src="/assets/js/vendor/popper.min.js"></script> -->
     <script src="assets/js/bootstrap.min.js"></script>
     <script type="text/javascript">

@@ -7,20 +7,28 @@ class Form
 
     public function save($data = [])
     {
-        if ($data['nome'] === false || $data['sobrenome'] === false ||
-            $data['email'] === false || $data['telefone'] === false ||
-            $data['login'] === false || $data['senha'] === false) {
-            return ['success' => false, 'invalid_field' => 'all', 'all' => 'This field is required'];
+        if ((!isset($data['nome']) || trim($data['nome']) === '') || (!isset($data['sobrenome']) || trim($data['sobrenome']) === '') ||
+            (!isset($data['email']) || trim($data['email']) === '') || (!isset($data['telefone']) || trim($data['telefone']) === '') ||
+            (!isset($data['login']) || trim($data['login']) === '') || (!isset($data['senha']) || trim($data['senha']) === '')) {
+            return ['success' => false, 'invalid_field' => 'all', 'all' => 'Este campo é obrigatório.'];
+        }
+
+        if (preg_match("/(\(?\d{2}\)?)?9?\d{4}-?\d{4}/", $data['telefone']) === false) {
+            return ['success' => false, 'invalid_field' => 'telefone', 'invalid_message' => 'O telefone informado é invalido.'];
+        }
+
+        if (filter_var($data['email'], FILTER_VALIDATE_EMAIL) === false) {
+            return ['success' => false, 'invalid_field' => 'email', 'invalid_message' => 'O e-mail informado é invalido.'];
         }
 
         $records = $this->getData();
 
         if ($this->getDataBy($records, $data['email'], 'email') !== false) {
-            return ['success' => false, 'invalid_field' => 'email', 'invalid_message' => 'This e-mail already exists'];
+            return ['success' => false, 'invalid_field' => 'email', 'invalid_message' => 'O e-mail informado já existe.'];
         }
 
         if ($this->getDataBy($records, $data['login'], 'login') !== false) {
-            return ['success' => false, 'invalid_field' => 'login', 'invalid_message' => 'This login already exists'];
+            return ['success' => false, 'invalid_field' => 'login', 'invalid_message' => 'O login informado já existe.'];
         }
 
         $id = (count($records) > 0 ? count($records) - 1 : 1);

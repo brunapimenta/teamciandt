@@ -1,4 +1,4 @@
-<h4>John's Bites</h4>
+<h4>Jo&atilde;ozinho</h4>
 <?php
     include_once('solutions/Bites.php');
 
