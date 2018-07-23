@@ -1,5 +1,5 @@
 <?php
-function foiMordido()
+function foiMordido($jaFoiMordido = false)
 {
-    return (bool) rand(0, 1);
+    return ($jaFoiMordido === true ? false : true);
 }
