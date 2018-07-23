@@ -1,5 +1,5 @@
 <h4>Jo&atilde;ozinho</h4>
-<p class="lead">Criar um c&oacute;digo/p&aacute;gina que mostre as frases "Jo&atilde;ozinho mordeu o seu dedo!" ou "Jo&atilde;ozinho N&Atilde;O mordeu o seu dedo!".</p>
+<p class="lead">Criar uma p&aacute;gina que mostre 50% "Jo&atilde;ozinho mordeu o seu dedo!" e 50% "Jo&atilde;ozinho N&Atilde;O mordeu o seu dedo!".</p>
 <?php
     include_once('solutions/Bites.php');
 
