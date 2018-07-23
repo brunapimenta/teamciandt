@@ -7,7 +7,7 @@ use Exception;
 
 class Users
 {
-    const _DIR = './api/data/';
+    const _DIR = './data/';
     const _FILE = 'users.txt';
 
     public function all()
@@ -34,13 +34,18 @@ class Users
                 throw new Exception("Bad Request", 400);
             }
 
+            if ($request->getPost('nome') === '' || $request->getPost('sobrenome') === '' ||
+                $request->getPost('email') === '' || $request->getPost('telefone') === '') {
+                throw new Exception("Bad Request", 400);
+            }
+
             $users = $this->getUsers();
 
             if ($this->getUserByEmail($users, $request->getPost('email')) !== false) {
                 throw new Exception("User email already exists", 400);
             }
 
-            $id = (count($users) > 0 ? count($users) - 1 : 1);
+            $id = count($users) + 1;
             $user = $this->setUser($id, $request->getPost());
             $users[$id] = $user;
 
@@ -66,11 +71,6 @@ class Users
 
             $request = new Request();
 
-            if ($request->hasPut('nome') === false || $request->hasPut('sobrenome') === false ||
-                $request->hasPut('email') === false || $request->hasPut('telefone') === false) {
-                throw new Exception("Bad Request", 400);
-            }
-
             $users = $this->getUsers();
 
             $user = $users[$id];
@@ -82,7 +82,7 @@ class Users
                 throw new Exception("User email already exists", 400);
             }
 
-            $user = $this->setUser($id, $request->getPut());
+            $user = $this->setUser($id, $request->getPut(), $user);
             $users[$id] = $user;
 
             $this->saveFile($users);
@@ -154,15 +154,27 @@ class Users
         return $user;
     }
 
-    private function setUser($id, $data)
+    private function setUser($id, $data = array(), $user = array())
     {
-        return [
-            'id' => (int) $id,
-            'nome' => trim($data['nome']),
-            'sobrenome' => trim($data['sobrenome']),
-            'email' => trim($data['email']),
-            'telefone' => trim($data['telefone']),
-        ];
+        $user['id'] = (int) $id;
+
+        if (isset($data['nome']) && trim($data['nome']) != '') {
+            $user['nome'] = trim($data['nome']);
+        }
+
+        if (isset($data['sobrenome']) && trim($data['sobrenome']) != '') {
+            $user['sobrenome'] = trim($data['sobrenome']);
+        }
+
+        if (isset($data['email']) && trim($data['email']) != '') {
+            $user['email'] = trim($data['email']);
+        }
+
+        if (isset($data['telefone']) && trim($data['telefone']) != '') {
+            $user['telefone'] = trim($data['telefone']);
+        }
+
+        return $user;
     }
 
     private function checkFile()

@@ -78,7 +78,7 @@
               <?php include_once('selects.php'); ?>
             </div>
             <div class="tab-pane fade" id="list-users" role="tabpanel" aria-labelledby="list-users-list">
-              <!-- include_once('users.php'); -->
+              <?php include_once('users.php'); ?>
             </div>
           </div>
         </div>

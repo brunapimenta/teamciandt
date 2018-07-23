@@ -4,8 +4,10 @@
     include_once('solutions/Bites.php');
 
     $bites = [];
+    $foiMordido = false;
     for ($i = 0; $i < 6; $i++) {
-        if (foiMordido()) {
+        $foiMordido = foiMordido($foiMordido);
+        if ($foiMordido) {
              $bites[] = 'Joãozinho mordeu o seu dedo!';
         } else {
             $bites[] = 'Joãozinho <strong>NÃO</strong> mordeu o seu dedo!';
