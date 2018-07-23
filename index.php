@@ -49,7 +49,7 @@
 
       <footer class="mastfoot mt-auto">
         <div class="inner">
-          <p><a href="contact.php" target="_blank">Bruna Pimenta</a> &copy; 2018</p>
+          <p><a href="contact.php">Bruna Pimenta</a> &copy; 2018</p>
         </div>
       </footer>
     </div>

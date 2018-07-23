@@ -33,7 +33,7 @@
               <a class="nav-link" href="solutions.php">Solu&ccedil;&otilde;es</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link " href="#">Contato</a>
+              <a class="nav-link" href="contact.php">Contato</a>
             </li>
           </ul>
         </div>
@@ -87,7 +87,7 @@
 
     <footer class="footer">
       <div class="container">
-        <span class="text-muted"><a href="contact.php" target="_blank">Bruna Pimenta</a> &copy; 2018</span>
+        <span class="text-muted"><a href="contact.php">Bruna Pimenta</a> &copy; 2018</span>
       </div>
     </footer>
 
