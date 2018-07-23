@@ -72,10 +72,10 @@
               <?php include_once('form.php'); ?>
             </div>
             <div class="tab-pane fade" id="list-parsers" role="tabpanel" aria-labelledby="list-parsers-list">
-              <!-- include_once('parsers.php'); -->
+              <?php include_once('parsers.php'); ?>
             </div>
             <div class="tab-pane fade" id="list-selects" role="tabpanel" aria-labelledby="list-selects-list">
-              <!-- include_once('selects.php'); -->
+              <?php include_once('selects.php'); ?>
             </div>
             <div class="tab-pane fade" id="list-users" role="tabpanel" aria-labelledby="list-users-list">
               <!-- include_once('users.php'); -->

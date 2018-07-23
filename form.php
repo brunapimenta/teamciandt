@@ -1,4 +1,5 @@
 <h4>Formul&aacute;rio</h4>
+<p class="lead">Armazena os dados dentro de um arquivo chamado <code>registros.txt</code>.</p>
 <?php
     include_once('solutions/Form.php');
 
@@ -10,7 +11,7 @@
         if ($formSave['success']) {
             echo '<div class="alert alert-success" role="alert"><strong>Feito!</strong> Os dados foram armazenados corretamente.</div>';
         } else {
-            echo '<div class="alert alert-danger" role="alert"><strong>Ops!</strong> Ocorreu um erro, tente novamente.</div>';
+            echo '<div class="alert alert-danger" role="alert"><strong>Ops!</strong> Ocorreu um erro ao armazenar os dados. Por favor, tente novamente.</div>';
         }
     }
 ?>
